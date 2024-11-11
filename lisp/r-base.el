@@ -38,8 +38,8 @@
   (make-empty-file custom-file))
 (load custom-file)
 
-(defconst user-cloud-dir (file-name-as-directory (getenv "CLOUD_DIR")))
-(defconst user-notes-dir (file-name-as-directory (concat user-cloud-dir "notes")))
+;;(defconst user-cloud-dir (file-name-as-directory "Q:/Dropbox/")
+(defconst user-notes-dir (file-name-as-directory "Q:/Dropbox/Notes"))
 
 (setq gc-cons-threshold (* 50 1000 1000))
 
@@ -329,7 +329,7 @@ default face height is set to 0.1 to hide regular prompt/contents"
       ;; `org-directory' is not yet defined).
       (dir (if (bound-and-true-p org-directory)
                org-directory
-             "~/org"))
+             "Q:/Dropbox/org"))
       (group
        ;; Subgroup collecting indirect Org buffers, grouping them by file.
        ;; This is very useful when used with `org-tree-to-indirect-buffer'.
@@ -347,7 +347,7 @@ default face height is set to 0.1 to hide regular prompt/contents"
       (auto-project))
      (dir user-emacs-directory)
      (dir user-notes-dir)
-     (dir (concat user-cloud-dir "lepisma.github.io/"))
+     ;;(dir (concat user-cloud-dir "lepisma.github.io/"))
      (auto-mode)))
   (bufler-reverse t))
 

@@ -76,11 +76,6 @@
   :config
   (direnv-mode))
 
-(use-package docker
-  :bind ("C-c d" . docker))
-
-(use-package vterm)
-
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
@@ -117,13 +112,14 @@
 (use-package lsp-treemacs
   :commands lsp-treemacs-errors-list)
 
-(use-package yaml-mode)
-
 (use-package yasnippet
   :config
   (yas-global-mode 1))
 
 (use-package dap-mode)
+
+(use-package indent-guide
+  :hook (prog-mode . indent-guide-mode))
 
 (use-package gptel
   :custom
